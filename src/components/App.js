@@ -1,45 +1,38 @@
+import getDataFromApi from '../services/api';
 import '../styles/App.scss';
+import { useEffect, useState } from 'react';
+import CharacterList from './CharacterList';
+
 
 function App() {
+  const [characterList, setCharacterList] = useState([]);
+  useEffect(() => {
+    getDataFromApi()
+    .then(((cleanData) => {
+      setCharacterList(cleanData);
+      console.log(cleanData)
+    }))
+  },[])
+
   return (
-    <div>Hola mundo</div>
+    <div>
+      <header>
+        <h1>Ricky and Morty</h1>
+      </header>
+      <main>
+        <form action="">
+          <label htmlFor="">Busqueda por nombre: 
+          <input type="text" name="seach_name"  id='search_name'/>
+          </label>
+        </form>
+        <section>
+         <CharacterList characterList={characterList}/>
+        </section>
+      </main>
+    </div>
   );
 }
 
 export default App;
 
-// Fichero src/components/App.js
-// Fichero src/components/App.js
 
-// import {Link, Route, Routes} from 'react-router-dom';
-
-// const App = () => {
-//   return(
-//     <div>
-//       <h2>Este titulo aparece siempre</h2>
-//       <Routes>
-//         <Route
-//         path='/contacto'
-//         element={
-//           <h2>
-//             Este titulo solo aparece cuando la usuaria entra en la pagina de contacto
-//           </h2>
-//         }/>
-//       </Routes>
-//       <nav>
-//         <ul>
-//           <li>
-//           <Link to='/'>Ir al inicio</Link>
-//             {/* <a href="/#/">Ir al inicio</a> */}
-//           </li>
-//           <li>
-//           <Link to='/contacto'>Ir a contacto</Link>
-//             {/* <a href="/#/contacto">Ir a contacto</a> */}
-//           </li>
-//         </ul>
-//       </nav>
-//     </div>
-//   )
-// }
-
-// export default App;

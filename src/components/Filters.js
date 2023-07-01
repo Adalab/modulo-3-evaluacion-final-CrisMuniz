@@ -16,10 +16,10 @@ function Filters({searchName,handleFilter, searchSpecie, typeOfSpecies}) {
           </label>
           <label htmlFor="">Especie:
           <select name="seach_specie" id="search_specie" value={searchSpecie} onChange={handleChangeSearchSpecie}>
-            {renderSpecieOptions}
+            {renderSpecieOptions()}
             <option value="all">Todas</option>
-            <option value="Human">Humano</option>
-            <option value="Alien">Alien</option>
+            {/* <option value="Human">Humano</option>
+            <option value="Alien">Alien</option> */}
           </select>
           </label>
           </form>

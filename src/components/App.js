@@ -6,6 +6,7 @@ import Filters from './Filters';
 
 
 function App() {
+  // VARIABLES FUNCIONALES
   const [characterList, setCharacterList] = useState([]);
   const [searchName, setSearchName] = useState('');
   const [searchSpecie, setSearchSpecie] = useState('all');
@@ -18,6 +19,7 @@ function App() {
     }))
   },[])
 
+  // SECCION FUNCIONES MANEJADORAS
   const handleFilter = (varName, varValue) => {
     if(varName === 'name'){
     setSearchName(varValue)
@@ -27,7 +29,7 @@ function App() {
     }
   }
     
-
+// SECCION FILTRADO
   const filteredCharacters = characterList
   .filter((eachCharacter) => eachCharacter.name.toLowerCase().includes(searchName.toLocaleLowerCase()))
   .filter((eachCharacter) => {
@@ -40,6 +42,7 @@ function App() {
   })
   const typeOfSpecies = characterList.map((eachCharacter) => eachCharacter.species)
 
+  // SECCION HTML
   return (
     <div>
       <header>

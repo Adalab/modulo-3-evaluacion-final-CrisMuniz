@@ -17,7 +17,10 @@ function CharacterDetail({characterData}) {
 }
 else{
     return(
+        <>
         <p>Lo sentimos, ese personaje no existe</p>
+        <Link to="/">Volver</Link>
+        </>
     )
 }
 }

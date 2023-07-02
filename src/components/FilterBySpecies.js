@@ -3,7 +3,7 @@ function FilterBySpecies({searchSpecie, handleFilter, typeOfSpecies}) {
         handleFilter('species', ev.target.value)
     }
     const renderSpecieOptions = () => {
-        // Creo un nuevo array para hacer que no se me dupliquen las especies cuando hago el map.Para ello utilizo el metodo Set.
+        // Creo un nuevo array para hacer que no se me dupliquen las especies cuando hago el map.Para ello utilizo el metodo Set y hago un spread del nuevo array.
         const newArr = new Set(typeOfSpecies);
         let result = [...newArr];
         return result.map((eachSpecie,id) =>(

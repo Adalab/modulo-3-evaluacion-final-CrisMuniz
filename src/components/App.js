@@ -3,6 +3,7 @@ import '../styles/App.scss';
 import { useEffect, useState } from 'react';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
+import { Route, Routes } from 'react-router-dom';
 
 
 function App() {
@@ -49,10 +50,16 @@ function App() {
         <h1>Ricky and Morty</h1>
       </header>
       <main>
-        <Filters searchName={searchName} handleFilter={handleFilter} searchSpecie={searchSpecie} typeOfSpecies={typeOfSpecies}/>
+        <Routes>
+          <Route path='/' element={<> <Filters searchName={searchName} handleFilter={handleFilter} searchSpecie={searchSpecie} typeOfSpecies={typeOfSpecies}/>
         <section>
          <CharacterList characterList={filteredCharacters}/>
-        </section>
+        </section></>}/>
+          <Route path='/character/:characterid' element={
+            <p>detalle personaje</p>
+          }/>
+        </Routes>
+       
       </main>
     </div>
   );

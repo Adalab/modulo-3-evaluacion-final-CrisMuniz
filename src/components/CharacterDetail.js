@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 function CharacterDetail({characterData}) {
+    if(characterData) {
     return(
         <div>
         <section>
@@ -13,5 +14,11 @@ function CharacterDetail({characterData}) {
         </section>
         </div>
     )
+}
+else{
+    return(
+        <p>Lo sentimos, ese personaje no existe</p>
+    )
+}
 }
 export default CharacterDetail;

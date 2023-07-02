@@ -12,9 +12,9 @@ const getDataFromApi = () => {
           gender: objetApi.gender,
           image: objetApi.image,
         }
+       
       });
       return(cleanData);
-     
     })
     )
 }

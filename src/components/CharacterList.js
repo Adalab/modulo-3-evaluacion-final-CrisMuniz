@@ -5,7 +5,6 @@ function CharacterList({characterList}) {
           <CharacterItem eachCharacter={eachcharacter}/>
         </li>
     ));
-    console.log(htmlLi)
     return (
         <ul>
        {htmlLi}

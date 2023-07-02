@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import { Route, Routes } from 'react-router-dom';
+import CharacterDetail from './CharacterDetail';
+import {useLocation, matchPath} from 'react-router';
 
 
 function App() {
@@ -43,6 +45,17 @@ function App() {
   })
   const typeOfSpecies = characterList.map((eachCharacter) => eachCharacter.species)
 
+  // OBTENER DATOS DEL PERSONAJE
+  const {pathname} = useLocation();
+  const routeData = matchPath('/character/:characterid', pathname);
+  console.log(routeData)
+  const characterId =routeData?.params.characterid;
+  console.log(characterId);
+  console.log(typeof(characterId))
+
+  const characterData = characterList.find((char) => Number(char.id) === Number(characterId));
+  console.log(characterData)
+
   // SECCION HTML
   return (
     <div>
@@ -55,9 +68,7 @@ function App() {
         <section>
          <CharacterList characterList={filteredCharacters}/>
         </section></>}/>
-          <Route path='/character/:characterid' element={
-            <p>detalle personaje</p>
-          }/>
+          <Route path='/character/:characterid' element={<CharacterDetail characterData={characterData}/>}/>
         </Routes>
        
       </main>

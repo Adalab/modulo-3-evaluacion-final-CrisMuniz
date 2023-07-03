@@ -12,8 +12,8 @@ function FilterBySpecies({searchSpecie, handleFilter, typeOfSpecies}) {
     }
 
     return(
-        <label htmlFor="">Especie:
-        <select name="seach_specie" id="search_specie" value={searchSpecie} onChange={handleChangeSearchSpecie}>
+        <label className="main__section1--form--label2" htmlFor="">Especie:
+        <select className="main__section1--form--select" name="seach_specie" id="search_specie" value={searchSpecie} onChange={handleChangeSearchSpecie}>
           {renderSpecieOptions()}
           <option value="all">Todas</option>
           {/* <option value="Human">Humano</option>

@@ -1,0 +1,104 @@
+.main {
+    display: flex;
+    flex-direction: column;
+   background-color: black;
+    &__section1 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        &--form {
+            display: flex;
+            flex-direction:column;
+            &--label {
+                color:white;
+            }
+            &--input {
+                border: 2px solid white;
+                margin-top: 20px;
+            }
+            &--label2 {
+                color: white;
+                margin-top: 20px;
+            }
+        }
+    }
+    &__section2 {
+        display: flex;
+       flex-direction: column;
+        padding-top: 50px;
+        &--div {
+            display: flex;
+            flex-direction: column;
+            line-height: 5px;
+
+        }
+        &--li {
+            width: 200px;
+            height: 250px;
+            border: solid 2px #8BCF21;
+            border-radius: 10%;
+            list-style: none;
+            display: flex;
+            // flex-direction: column;
+            justify-content:center;
+            margin: 20px 0;
+            &--img {
+                width: 100px;
+                height: 100px;
+
+            }
+            &--h3 {
+                font-size: 15px;
+                color:#8BCF21;
+                outline: none;
+                text-decoration: none;
+            }
+            &--p1 {
+                font-size: 15px;
+                color:#8BCF21;
+            }
+            &--p2 {
+                font-size: 15px;
+                color:#8BCF21;
+            }
+            &--p3 {
+                font-size: 15px;
+                color:#8BCF21;
+            }
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    .main {
+        // display: flex;
+        // flex-direction: row;
+      &__section1{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: black;
+        text-align: center;
+        
+        
+        &--form {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            
+        }
+      }
+      &__section2 {
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+        &--ul {
+            display:grid;
+           grid-template-columns: 1fr 1fr 1fr;
+           gap: 30px;
+           
+          }
+      }
+      
+    }
+}

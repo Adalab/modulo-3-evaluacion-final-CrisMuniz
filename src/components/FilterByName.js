@@ -3,19 +3,20 @@ function FilterByName({searchName, handleFilter, filteredCharacters}) {
         ev.preventDefault();
         handleFilter('name', ev.target.value);
     }
-    console.log(searchName);
-    console.log(filteredCharacters);
+    console.log(filteredCharacters.includes(searchName.value))
+    console.log(typeof(filteredCharacters))
+
     if(filteredCharacters.includes(searchName.value) ){
-       
+
     return(
-        <label htmlFor="">Busqueda por nombre:
-        <input type="text" name="seach_name"  id='search_name' value={searchName} onChange={handleChangeSearchName}/>
+        <label className="main__section1--form--label" htmlFor="">Busqueda por nombre:
+        <input className="main__section1--form--input" type="text" name="seach_name"  id='search_name' value={searchName} onChange={handleChangeSearchName}/>
         </label>
     )
     }
     else {
-         return(<> <label htmlFor="">Busqueda por nombre:
-         <input type="text" name="seach_name"  id='search_name' value={searchName} onChange={handleChangeSearchName}/>
+         return(<> <label className="main__section1--form--label" htmlFor="" >Busqueda por nombre:
+         <input className="main__section1--form--input" type="text" name="seach_name"  id='search_name' value={searchName} onChange={handleChangeSearchName}/>
          </label>
         <p>error</p></>)
     }

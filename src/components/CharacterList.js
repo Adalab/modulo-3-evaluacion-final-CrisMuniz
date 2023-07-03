@@ -1,12 +1,12 @@
 import CharacterItem from "./CharacterItem";
 function CharacterList({characterList}) {
     const htmlLi = characterList.map((eachcharacter) => (
-        <li className="list" key={eachcharacter.id}>
+        <li className="main__section2--li" key={eachcharacter.id}>
           <CharacterItem eachCharacter={eachcharacter}/>
         </li>
     ));
     return (
-        <ul>
+        <ul className="main__section2--ul">
        {htmlLi}
       </ul>
     )

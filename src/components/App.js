@@ -6,7 +6,9 @@ import Filters from './Filters';
 import { Route, Routes } from 'react-router-dom';
 import CharacterDetail from './CharacterDetail';
 import {useLocation, matchPath} from 'react-router';
-import ls from '../services/localStorage'
+import ls from '../services/localStorage';
+import imageHeader from '../images/rickandmortyglobe.jpeg';
+import imageFooter from '../images/rickymorty_title.png'
 
 
 function App() {
@@ -20,7 +22,7 @@ function App() {
     getDataFromApi()
     .then((cleanData) => {
       setCharacterList(cleanData);
-      // console.log(cleanData)
+
       ls.set('character', cleanData)
     })
   }
@@ -35,7 +37,7 @@ function App() {
       setSearchSpecie(varValue)
     }
   }
-    
+
 // SECCION FILTRADO
   const filteredCharacters = characterList
   .filter((eachCharacter) => eachCharacter.name.toLowerCase().includes(searchName.toLocaleLowerCase()))
@@ -52,30 +54,34 @@ function App() {
   // OBTENER DATOS DEL PERSONAJE
   const {pathname} = useLocation();
   const routeData = matchPath('/character/:characterid', pathname);
-  // console.log(routeData)
+
   const characterId =routeData?.params.characterid;
-  // console.log(characterId);
-  // console.log(typeof(characterId))
+
 
   const characterData = characterList.find((char) => Number(char.id) === Number(characterId));
-  // console.log(characterData)
+
 
   // SECCION HTML
   return (
     <div>
-      <header>
-        <h1>Ricky and Morty</h1>
+      <header className='header'>
+        <img className='header__img' src={imageHeader} alt="" />
       </header>
-      <main>
+      <main className='main'>
         <Routes>
+
           <Route path='/' element={<> <Filters searchName={searchName} handleFilter={handleFilter} searchSpecie={searchSpecie} typeOfSpecies={typeOfSpecies} filteredCharacters={filteredCharacters}/>
-        <section>
+
+        <section className='main__section2'>
          <CharacterList characterList={filteredCharacters}/>
         </section></>}/>
           <Route path='/character/:characterid' element={<CharacterDetail characterData={characterData}/>}/>
         </Routes>
-       
+
       </main>
+      <footer>
+        {/* <img src={imageFooter} alt="" /> */}
+      </footer>
     </div>
   );
 }

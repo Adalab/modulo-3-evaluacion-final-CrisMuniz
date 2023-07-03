@@ -40,9 +40,9 @@ npm run githubpages
 ```
 
 ## Construido con
-```Html
-```Sass
-```React
+Html
+Sass
+React
 
 ### Autores
 Cris Muñiz

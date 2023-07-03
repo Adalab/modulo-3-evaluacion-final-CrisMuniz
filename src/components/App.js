@@ -79,8 +79,8 @@ function App() {
         </Routes>
 
       </main>
-      <footer>
-        {/* <img src={imageFooter} alt="" /> */}
+      <footer className='footer'>
+         <img className='footer__img' src={imageFooter} alt="" /> 
       </footer>
     </div>
   );

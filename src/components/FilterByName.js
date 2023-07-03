@@ -17,8 +17,9 @@ function FilterByName({searchName, handleFilter, filteredCharacters}) {
     else {
          return(<> <label className="main__section1--form--label" htmlFor="" >Busqueda por nombre:
          <input className="main__section1--form--input" type="text" name="seach_name"  id='search_name' value={searchName} onChange={handleChangeSearchName}/>
+         <p className="main__section1--form--error">error</p>
          </label>
-        <p>error</p></>)
+        </>)
     }
    
 }

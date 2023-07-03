@@ -1,15 +1,14 @@
 .header {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    &__img {
-        width: 50vw;
-        object-fit: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: 50px 50px;
-
-    }
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  &__img {
+    width: 50vw;
+    object-fit: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+  }
 }

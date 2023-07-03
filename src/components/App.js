@@ -6,20 +6,24 @@ import Filters from './Filters';
 import { Route, Routes } from 'react-router-dom';
 import CharacterDetail from './CharacterDetail';
 import {useLocation, matchPath} from 'react-router';
+import ls from '../services/localStorage'
 
 
 function App() {
   // VARIABLES FUNCIONALES
-  const [characterList, setCharacterList] = useState([]);
+  const [characterList, setCharacterList] = useState(ls.get('character', []));
   const [searchName, setSearchName] = useState('');
   const [searchSpecie, setSearchSpecie] = useState('all');
 
   useEffect(() => {
+    if(ls.get('character', null) === null) {
     getDataFromApi()
-    .then(((cleanData) => {
+    .then((cleanData) => {
       setCharacterList(cleanData);
-      console.log(cleanData)
-    }))
+      // console.log(cleanData)
+      ls.set('character', cleanData)
+    })
+  }
   },[])
 
   // SECCION FUNCIONES MANEJADORAS
@@ -48,13 +52,13 @@ function App() {
   // OBTENER DATOS DEL PERSONAJE
   const {pathname} = useLocation();
   const routeData = matchPath('/character/:characterid', pathname);
-  console.log(routeData)
+  // console.log(routeData)
   const characterId =routeData?.params.characterid;
-  console.log(characterId);
-  console.log(typeof(characterId))
+  // console.log(characterId);
+  // console.log(typeof(characterId))
 
   const characterData = characterList.find((char) => Number(char.id) === Number(characterId));
-  console.log(characterData)
+  // console.log(characterData)
 
   // SECCION HTML
   return (
@@ -64,7 +68,7 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path='/' element={<> <Filters searchName={searchName} handleFilter={handleFilter} searchSpecie={searchSpecie} typeOfSpecies={typeOfSpecies}/>
+          <Route path='/' element={<> <Filters searchName={searchName} handleFilter={handleFilter} searchSpecie={searchSpecie} typeOfSpecies={typeOfSpecies} filteredCharacters={filteredCharacters}/>
         <section>
          <CharacterList characterList={filteredCharacters}/>
         </section></>}/>

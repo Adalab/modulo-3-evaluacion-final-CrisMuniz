@@ -1,14 +1,16 @@
-import getDataFromApi from "../services/api";
-import "../styles/App.scss";
+import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useLocation, matchPath } from "react-router";
+import getDataFromApi from "../services/api";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
-import { Route, Routes } from "react-router-dom";
 import CharacterDetail from "./CharacterDetail";
-import { useLocation, matchPath } from "react-router";
 import ls from "../services/localStorage";
 import imageHeader from "../images/rickandmortyglobe.jpeg";
 import imageFooter from "../images/rickymorty_title.png";
+import logoHeart from "../images/corazon.png";
+import logoDied from "../images/angel.png";
+import "../styles/App.scss";
 
 function App() {
   // VARIABLES FUNCIONALES
@@ -35,6 +37,18 @@ function App() {
     }
   };
 
+  // FUNCION PARA ORDENAR LA LISTA DE OBJETOS ALFABETICAMENTE
+characterList.sort(function(a, b){
+  if(a.name > b.name) {
+    return 1;
+  }
+  else if (a.name < b.name) {
+    return -1;
+  }
+  else {
+    return 0;
+  }
+})
   // SECCION FILTRADO
   const filteredCharacters = characterList
     .filter((eachCharacter) =>
@@ -82,7 +96,7 @@ function App() {
                   filteredCharacters={filteredCharacters}
                 />
                 <section className="main__section2">
-                  <CharacterList characterList={filteredCharacters} />
+                  <CharacterList characterList={filteredCharacters} logoHeart={logoHeart}  logoDied={logoDied} />
                 </section>
               </>
             }

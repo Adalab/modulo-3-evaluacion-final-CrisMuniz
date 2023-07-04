@@ -8,8 +8,6 @@ import CharacterDetail from "./CharacterDetail";
 import ls from "../services/localStorage";
 import imageHeader from "../images/rickandmortyglobe.jpeg";
 import imageFooter from "../images/rickymorty_title.png";
-import logoHeart from "../images/corazon.png";
-import logoDied from "../images/angel.png";
 import "../styles/App.scss";
 
 function App() {
@@ -96,7 +94,7 @@ characterList.sort(function(a, b){
                   filteredCharacters={filteredCharacters}
                 />
                 <section className="main__section2">
-                  <CharacterList characterList={filteredCharacters} logoHeart={logoHeart}  logoDied={logoDied} />
+                  <CharacterList characterList={filteredCharacters}/>
                 </section>
               </>
             }

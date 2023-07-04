@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
-function CharacterItem({ eachCharacter, logoDied, logoHeart }) {
-  let characterStatus 
-  if(eachCharacter.status === "Alive"){
-   characterStatus = <img className="image" src={`${logoHeart}`} alt="">{logoHeart}</img>
+function CharacterItem({ eachCharacter}) {
+  // let characterStatus 
+  // if(eachCharacter.status === "Alive"){
+  //  characterStatus = <img className="image" src= alt="">{}</img>
 
-  }
+  // }
   // console.log(characterStatus)
   return (
     <Link to={"/character/" + eachCharacter.id}>
@@ -20,7 +20,7 @@ function CharacterItem({ eachCharacter, logoDied, logoHeart }) {
         <p className="main__section2--li--p2">
           Especie:{eachCharacter.species}
         </p>
-         <p className="main__section2--li--p3">Status:{eachCharacter.status} <img src={characterStatus} alt="" /> </p> 
+         <p className="main__section2--li--p3">Status:{eachCharacter.status}  </p> 
          
         
       </div>

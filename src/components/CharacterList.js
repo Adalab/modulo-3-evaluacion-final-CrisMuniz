@@ -1,5 +1,5 @@
 import CharacterItem from "./CharacterItem";
-function CharacterList({ characterList, logoHeart, logoDied }) {
+function CharacterList({ characterList, getIcon }) {
   const htmlLi = characterList.map((eachcharacter) => (
     <li className="main__section2--li" key={eachcharacter.id}>
       <CharacterItem eachCharacter={eachcharacter}/>

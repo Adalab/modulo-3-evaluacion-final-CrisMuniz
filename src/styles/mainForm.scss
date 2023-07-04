@@ -57,29 +57,28 @@
         color: #2f9331;
         outline: none;
         text-decoration: none;
-        line-height: 20px;
+        line-height: 25px;
       }
       &--p1 {
         font-size: 15px;
         color: #926f44;
-        line-height: 20px;
+        line-height: 25px;
       }
       &--p2 {
         font-size: 15px;
         color: #926f44;
-        line-height: 20px;
+        line-height: 25px;
       }
       &--p3 {
         font-size: 15px;
         color: #926f44;
-        line-height: 20px;
+        line-height: 25px;
       }
     }
   }
 }
-.image {
-  width: 20px;
-  height: 20px;
+a:link, a:visited, a:active {
+  text-decoration:none;
 }
 @media screen and (min-width: 768px) {
   .main {

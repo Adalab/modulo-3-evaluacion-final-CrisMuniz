@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faSkullCrossbones, faHeartPulse, faPersonCircleQuestion } from "@fortawesome/free-solid-svg-icons";
 
-function CharacterItem({ eachCharacter}) {
-  // let characterStatus 
-  // if(eachCharacter.status === "Alive"){
-  //  characterStatus = <img className="image" src= alt="">{}</img>
-
-  // }
-  // console.log(characterStatus)
+function CharacterItem({ eachCharacter,}) {
+  const getIcon = () => {
+    if(eachCharacter.status === "Dead") {
+      return <FontAwesomeIcon icon={faSkullCrossbones} />
+    }
+    else if (eachCharacter.status === "Alive") {
+      return <FontAwesomeIcon icon={faHeartPulse} />
+    }
+    else {
+      return <FontAwesomeIcon icon={faPersonCircleQuestion} />;
+    }
+    
+  }
   return (
     <Link to={"/character/" + eachCharacter.id}>
       <img
@@ -20,7 +28,7 @@ function CharacterItem({ eachCharacter}) {
         <p className="main__section2--li--p2">
           Especie:{eachCharacter.species}
         </p>
-         <p className="main__section2--li--p3">Status:{eachCharacter.status}  </p> 
+         <p className="main__section2--li--p3">Status:{eachCharacter.status} {getIcon()}</p> 
          
         
       </div>

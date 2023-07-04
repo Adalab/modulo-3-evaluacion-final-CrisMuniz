@@ -10,6 +10,8 @@ import imageHeader from "../images/rickandmortyglobe.jpeg";
 import imageFooter from "../images/rickymorty_title.png";
 import "../styles/App.scss";
 
+
+
 function App() {
   // VARIABLES FUNCIONALES
   const [characterList, setCharacterList] = useState(ls.get("character", []));
@@ -47,6 +49,9 @@ characterList.sort(function(a, b){
     return 0;
   }
 })
+
+
+
   // SECCION FILTRADO
   const filteredCharacters = characterList
     .filter((eachCharacter) =>

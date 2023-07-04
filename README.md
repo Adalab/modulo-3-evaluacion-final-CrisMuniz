@@ -48,6 +48,8 @@ React
 Cris Muñiz
 
 ### Recursos externos
-<a href="https://www.flaticon.es/iconos-gratis/latido-del-corazon" title="latido-del-corazon iconos">Latido-del-corazon iconos creados por Freepik - Flaticon</a>
-<a href="https://www.flaticon.es/iconos-gratis/dia-de-muertos" title="dia de muertos iconos">Dia de muertos iconos creados por Freepik - Flaticon</a>
-<a target="_blank" href="https://icons8.com/icon/63379/rick-sanchez">Rick Sanchez</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+([href="https://www.flaticon.es/iconos-gratis/latido-del-corazon" title="latido-del-corazon iconos">Latido-del-corazon iconos creados por Freepik - Flaticon])
+
+([ href="https://www.flaticon.es/iconos-gratis/dia-de-muertos" title="dia de muertos iconos">Dia de muertos iconos creados por Freepik - Flaticon])
+
+([ target="_blank" href="https://icons8.com/icon/63379/rick-sanchez">Rick Sanchez</a> icon by <a target="_blank" href="https://icons8.com">Icons8])

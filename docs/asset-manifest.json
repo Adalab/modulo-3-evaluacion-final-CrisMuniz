@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.0f1084c9.css",
+    "main.css": "./static/css/main.eb06d1ad.css",
     "main.js": "./static/js/main.1e5d79c6.js",
     "static/media/rickandmortyglobe.jpeg": "./static/media/rickandmortyglobe.cdf984e5cd876c49ea03.jpeg",
     "static/media/rickymorty_title.png": "./static/media/rickymorty_title.5c4bb5a2bbde3d921dab.png",
     "index.html": "./index.html",
-    "main.0f1084c9.css.map": "./static/css/main.0f1084c9.css.map",
+    "main.eb06d1ad.css.map": "./static/css/main.eb06d1ad.css.map",
     "main.1e5d79c6.js.map": "./static/js/main.1e5d79c6.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f1084c9.css",
+    "static/css/main.eb06d1ad.css",
     "static/js/main.1e5d79c6.js"
   ]
 }
